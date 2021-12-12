@@ -16,6 +16,7 @@ function Section() {
                 <RightButton>
                     Existing Inventory
                 </RightButton>
+
               </ButtonGroup>
               <DownArrow src='/images/down-arrow.svg'/>
           </Buttons>
@@ -40,12 +41,16 @@ const Wrap = styled.div`
 
 const ItemText = styled.div`
   padding-top: 15vh;
-  text-align:center;
+  text-align: center;
 `
 
 const ButtonGroup = styled.div`
  display: flex;
  margin-bottom: 30px;
+ @media (max-width:768px){
+   flex-direction: column;
+ }
+
 `
 const LeftButton = styled.div`
   background-color: rgba(23,26,32,0.8);
@@ -64,12 +69,13 @@ const LeftButton = styled.div`
 `
 
 const RightButton = styled(LeftButton)`
-
+ background: #fff;
+ opacity: 0.65;
+ color: #000;
 `
 
 const DownArrow = styled.img`
   height: 40px;
-  overflow-x: hidden;
   animation: animateDown infinite 1.5s;
 `
 

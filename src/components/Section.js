@@ -19,8 +19,6 @@ function Section({title,description,leftBtnText,rightBtnText,backgroundImg}) {
                       {rightBtnText}
                   </RightButton>
                 }
-
-
               </ButtonGroup>
               <DownArrow src='/images/down-arrow.svg'/>
           </Buttons>

@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 function Header() {
+  const [burgerStatus, setBurgerStatus] = useState(false);
     return (
         <Container>
           <a href="">
@@ -18,18 +20,20 @@ function Header() {
           <RightMenu>
             <a href="#">Shop</a>
             <a href="#">Tesla Account</a>
-          <CustomMenu/>
+          <CustomMenu onClick={()=>setBurgerStatus(true)} />
           </RightMenu>
-            <BurgerNav>
-              <a href="#">Existing Inventory</a>
-              <a href="#">Used Inventory</a>
-              <a href="#">Trade-In</a>
-              <a href="#">Roadster</a>
-              <a href="#">Existing Inventory</a>
-              <a href="#">Existing Inventory</a>
+            <BurgerNav show={burgerStatus}>
+                <CloseWraper>
+                <CustomClose onClick={()=>setBurgerStatus(false)}/>
+                </CloseWraper>
+                  <li><a href="#">Existing Inventory</a></li>
+                  <li><a href="#">Used Inventory</a></li>
+                  <li><a href="#">Trade-In</a></li>
+                  <li><a href="#">Roadster</a></li>
+                  <li><a href="#">Existing Inventory</a></li>
+                  <li><a href="#">Existing Inventory</a></li>
 
             </BurgerNav>
-
         </Container>
     )
 }
@@ -89,4 +93,27 @@ const BurgerNav = styled.div`
   background: #fff;
   width: 300px;
   z-index: 16;
+  list-style: none;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  transform: ${props => props.show ? 'translateX(0)':'translateX(100%)'};
+  li{
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+
+    a{
+      font-weight:600;
+    }
+  }
+`
+
+const CustomClose = styled(CloseIcon)`
+cursor:pointer;
+`
+
+const CloseWraper = styled.div`
+display: flex;
+justify-content: flex-end;
 `

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import MenuIcon from '@material-ui/icons/Menu';
-import Fade from 'react-reveal/Fade';
+
 
 function Header() {
     return (
@@ -20,6 +20,16 @@ function Header() {
             <a href="#">Tesla Account</a>
           <CustomMenu/>
           </RightMenu>
+            <BurgerNav>
+              <a href="#">Existing Inventory</a>
+              <a href="#">Used Inventory</a>
+              <a href="#">Trade-In</a>
+              <a href="#">Roadster</a>
+              <a href="#">Existing Inventory</a>
+              <a href="#">Existing Inventory</a>
+
+            </BurgerNav>
+
         </Container>
     )
 }
@@ -37,6 +47,7 @@ const Container = styled.div`
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
 `
 
 const Menu = styled.div`
@@ -68,4 +79,14 @@ align-items: center;
 
 const CustomMenu = styled(MenuIcon)`
   cursor: pointer;
+`
+
+const BurgerNav = styled.div`
+  position: fixed;
+  top:0;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  width: 300px;
+  z-index: 16;
 `

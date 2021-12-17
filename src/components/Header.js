@@ -37,8 +37,6 @@ function Header() {
                   <li><a href="#">Used Inventory</a></li>
                   <li><a href="#">Trade-In</a></li>
                   <li><a href="#">Roadster</a></li>
-                
-
             </BurgerNav>
         </Container>
     )
